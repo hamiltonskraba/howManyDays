@@ -12,3 +12,5 @@ export const monthsMap = [
     {value: '11', label: 'November'},
     {value: '12', label: 'December'},
 ];
+
+export const thirtyOneDays = ['1', '3', '5', '7', '8', '10', '12'];

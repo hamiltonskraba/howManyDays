@@ -84,9 +84,45 @@ h1 {
   min-width: 100px;
 }
 
+.monthGroup:hover {
+  cursor: pointer;
+}
+
 .monthList {
   flex-direction: column;
   position: absolute;
   top: 30px;
   left: 0;
+}
+
+.daysList {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: 130px;
+}
+
+.yearGroup {
+  width: 45px;
+}
+
+.yearGroup > input {
+  padding: 0;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+}
+
+.dayCount {
+  width: 100px;
+  height: 40px;
+  background-color: white;
 }
