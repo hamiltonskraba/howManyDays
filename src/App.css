@@ -102,6 +102,10 @@ h1 {
   width: 130px;
 }
 
+.dayGroup {
+  min-width: 41px;
+}
+
 .yearGroup {
   width: 45px;
 }
@@ -121,8 +125,14 @@ input:focus {
   outline: none;
 }
 
-.dayCount {
-  width: 100px;
-  height: 40px;
-  background-color: white;
+.resultsContainer {
+  background-color: transparent;
+}
+
+.displayCount {
+  background-color: #F5F5F5;
+  border-radius: 4px;
+  width: 200px;
+  height: 80px;
+  font-weight: 700;
 }
