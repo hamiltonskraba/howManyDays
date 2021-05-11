@@ -9,16 +9,17 @@ class App extends React.Component {
         super(props);
         this.state = {
             dayCount: 0,
+            blurb: null,
         }
         this.calculateDays = this.calculateDays.bind(this);
     }
 
-    calculateDays = (year, month, day) => {
+    calculateDays = (year, month, day, text) => {
         const today = new Date();
-        console.log(today);
+        // console.log(today);
 
         const inputDate = new Date(year, month - 1, day);
-        console.log(inputDate);
+        // console.log(inputDate);
 
         // number of milliseconds in one day
         const ONE_DAY = 1000 * 60 * 60 * 24;
@@ -32,15 +33,17 @@ class App extends React.Component {
         // convert back to days
         const dayCount = Math.round(difference_ms/ONE_DAY);
 
-        this.setState({dayCount: dayCount});
+        this.setState({dayCount: dayCount, blurb: text});
     }
+
+
 
     render(){
         return (
             <div className="App">
                 <Container />
-                <DatePicker calculateDays={this.calculateDays}/>
-                <Results count={this.state.dayCount}/>
+                <DatePicker calculateDays={this.calculateDays} />
+                <Results count={this.state.dayCount} blurb={this.state.blurb}/>
             </div>
         );
     }

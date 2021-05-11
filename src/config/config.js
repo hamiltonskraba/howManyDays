@@ -14,3 +14,17 @@ export const monthsMap = [
 ];
 
 export const thirtyOneDays = ['1', '3', '5', '7', '8', '10', '12'];
+
+export const unitsMap = [
+    {value: 'days', label: 'Days'},
+    {value: 'hours', label: 'Hours'},
+    {value: 'minutes', label: 'Minutes'},
+    {value: 'seconds', label: 'Seconds'},
+]
+
+export const historyMap = [
+    {value: '7/4/1776', label: 'USA!'},
+    {value: '1/6/1885', label: 'Birth'},
+    {value: '2/14/1994', label: 'Yarg'},
+    {value: '4/9/1625', label: 'meowDay'},
+];
