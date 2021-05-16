@@ -12,6 +12,7 @@ class DatePicker extends React.Component {
             year: year,
             monthDisplay: false,
             dayDisplay: false,
+            opacifyResults: false,
             isLeap: false,
         }
         this.setDate = this.setDate.bind(this);
@@ -20,6 +21,7 @@ class DatePicker extends React.Component {
         this.checkYear = this.checkYear.bind(this);
         this.toggleBoth = this.toggleBoth.bind(this);
         this.dayInHistory = this.dayInHistory.bind(this);
+        this.handleReturnKey = this.handleReturnKey.bind(this);
     }
 
     calculate  = (blurb) => {
@@ -39,16 +41,18 @@ class DatePicker extends React.Component {
     }
 
     toggleMonths(){
-        // console.log('called toggle months');
-        this.setState({monthDisplay: !this.state.monthDisplay, dayDisplay: false});
+        this.setState({monthDisplay: !this.state.monthDisplay, dayDisplay: false},
+            () => this.props.setResultsOpacity(this.state.monthDisplay));
     }
 
     toggleDays(){
-        this.setState({dayDisplay: !this.state.dayDisplay, monthDisplay: false});
+        this.setState({dayDisplay: !this.state.dayDisplay, monthDisplay: false},
+            () => this.props.setResultsOpacity(this.state.dayDisplay));
     }
 
     toggleBoth(){
-        this.setState({monthDisplay: false, dayDisplay: false});
+        this.setState({monthDisplay: false, dayDisplay: false},
+            () => this.props.setResultsOpacity(false));
     }
 
     checkYear(e){
@@ -88,6 +92,13 @@ class DatePicker extends React.Component {
         }, () => this.calculate(blurb));
     }
 
+    handleReturnKey(e){
+        // console.log(e.key);
+        if(e.key === 'Enter'){
+            this.calculate();
+        }
+    }
+
     render(){
         // create the months list
         const months = monthsMap.map((el, idx) =>
@@ -118,20 +129,20 @@ class DatePicker extends React.Component {
             <div className="dateContainer flex-center">
                 <div className="userChoice flex-center">
                     <div className="inputGroup flex-center">
-                        <div className="monthGroup hoverPointer" onClick={this.toggleMonths}>
+                        <div className="monthGroup flex-center hoverPointer" onClick={this.toggleMonths}>
                             {this.state.monthLabel}
                             <span style={{display: this.state.monthDisplay ? 'flex' : 'none'}} className="monthList">
                                 {months}
                             </span>
                         </div>
-                        <div className="dayGroup hoverPointer" onClick={this.toggleDays}>
+                        <div className="dayGroup flex-center hoverPointer" onClick={this.toggleDays}>
                             {this.state.day}
                             <span style={{display: this.state.dayDisplay ? 'flex' : 'none'}} className="daysList">
                                 {days}
                             </span>
                         </div>
-                        <div className="yearGroup hoverPointer">
-                            <input className="hoverPointer" type="text" value={this.state.year} onChange={this.checkYear} onClick={this.toggleBoth} datetype="year" />
+                        <div className="yearGroup flex-center hoverPointer">
+                            <input className="hoverPointer" type="text" maxLength="4" value={this.state.year} onChange={this.checkYear} onClick={this.toggleBoth} datetype="year" onKeyPress={this.handleReturnKey}/>
                         </div>
                     </div>
                     <button className="submitButton hoverPointer" onClick={this.calculate}>Tell Me</button>

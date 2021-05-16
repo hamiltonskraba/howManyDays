@@ -10,6 +10,7 @@ class App extends React.Component {
         this.state = {
             dayCount: 0,
             blurb: null,
+            opacifyResults: false,
         }
         this.calculateDays = this.calculateDays.bind(this);
     }
@@ -36,14 +37,18 @@ class App extends React.Component {
         this.setState({dayCount: dayCount, blurb: text});
     }
 
+    setResultsOpacity = (arg) => {
+        this.setState({opacifyResults: arg});
+    }
+
 
 
     render(){
         return (
             <div className="App">
                 <Container />
-                <DatePicker calculateDays={this.calculateDays} />
-                <Results count={this.state.dayCount} blurb={this.state.blurb}/>
+                <DatePicker calculateDays={this.calculateDays} setResultsOpacity={this.setResultsOpacity}/>
+                <Results count={this.state.dayCount} blurb={this.state.blurb} opacify={this.state.opacifyResults}/>
             </div>
         );
     }

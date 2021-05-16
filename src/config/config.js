@@ -23,8 +23,8 @@ export const unitsMap = [
 ]
 
 export const historyMap = [
-    {value: '7/4/1776', label: 'USA!'},
+    {value: '7/4/1776', label: 'USA! USA! USA!'},
     {value: '1/6/1885', label: 'Birth'},
-    {value: '2/14/1994', label: 'Yarg'},
-    {value: '4/9/1625', label: 'meowDay'},
+    {value: '1/24/1988', label: 'My B-Day'},
+    {value: '1/1/2000', label: 'Y2K'},
 ];
