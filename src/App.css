@@ -67,7 +67,7 @@ h1 {
 
 .dateContainer {
   z-index: 1;
-  margin: 25px 10px;
+  margin: 25px 0;
   flex-direction: column;
 }
 
