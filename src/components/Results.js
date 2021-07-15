@@ -41,17 +41,17 @@ class Results extends React.Component {
             >{el.label}</button>);
 
         return(
-            <div>
-            <div className="resultsContainer flex-center">
-                <div className="displayCount flex-center" style={{opacity: this.props.opacify ? '70%' : '100%'}}>
-                    {this.calculateUnit(this.props.count).toLocaleString()}
-                    <div className="blurb">{this.props.blurb}</div>
-                </div>
+            <div className="results">
+                <div className="resultsContainer flex-center">
+                    <div className="displayCount flex-center" style={{opacity: this.props.opacify ? '70%' : '100%'}}>
+                        {this.calculateUnit(this.props.count).toLocaleString()}
+                        <div className="blurb">{this.props.blurb}</div>
+                    </div>
 
-            </div>
-            <div className="unitButtonsContainer flex-center">
-                <div className="unitSelection">{units}</div>
-            </div>
+                </div>
+                <div className="unitButtonsContainer flex-center">
+                    <div className="unitSelection">{units}</div>
+                </div>
             </div>
         )
     }

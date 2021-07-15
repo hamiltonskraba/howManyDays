@@ -145,9 +145,14 @@ class DatePicker extends React.Component {
                             <input className="hoverPointer" type="text" maxLength="4" value={this.state.year} onChange={this.checkYear} onClick={this.toggleBoth} datetype="year" onKeyPress={this.handleReturnKey}/>
                         </div>
                     </div>
-                    <button className="submitButton hoverPointer" onClick={this.calculate}>Tell Me</button>
+
                 </div>
-                <button className="randomDateButton hoverPointer" onClick={this.dayInHistory}>Choose An Important Date</button>
+                <div className="submitContainer">
+                    <button className="submitButton hoverPointer" onClick={this.calculate}>Tell Me!</button>
+                    <p className="orText">Or</p>
+                    <button className="randomDateButton hoverPointer" onClick={this.dayInHistory}>Choose A Random Date</button>
+                </div>
+
             </div>
         );
     }

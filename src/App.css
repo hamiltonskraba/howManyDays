@@ -1,9 +1,15 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
 body {
   background-color: #0D090A;
+  height: 100vh;
+}
+
+#root {
+  height: 100%
 }
 
 h1 {
@@ -13,7 +19,9 @@ h1 {
 }
 
 .container {
-  margin-top: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .flex-center {
@@ -22,10 +30,17 @@ h1 {
   align-items: center;
 }
 
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .title {
   font-family: 'Maven Pro', sans-serif;
   font-size: 40px;
-  margin-left: 25px;
+  text-shadow: 1px 2px 3px #3c73a3;;
 }
 
 #particles-js {
@@ -39,6 +54,13 @@ h1 {
   z-index: -1;
 }
 
+.submitContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px 0 12px;
+}
+
 .submitButton {
   color: #F5F5F5;
   background-color: #3DA35D;
@@ -47,7 +69,6 @@ h1 {
   border-radius: 5px;
   padding: 10px 15px;
   border: none;
-  margin-left: 10px;
   font-family: 'Maven Pro', sans-serif;
   border: 2px inset #2ca337;
 }
@@ -229,7 +250,6 @@ input:focus {
   padding: 7px 11px;
   border-radius: 4px;
   border: none;
-  margin-top: 15px;
   font-family: 'Maven Pro', sans-serif;
   font-weight: 700;
   min-height: 37px;
@@ -242,4 +262,13 @@ input:focus {
 }
 .blurb {
   margin: 10px;
+  font-size: 16px;
+}
+
+.orText {
+  display: inline-block;
+  color: #f5f5f5;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 15px;
 }

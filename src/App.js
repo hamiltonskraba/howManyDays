@@ -1,4 +1,5 @@
 import './App.css';
+import './AppMediaQuery.css';
 import React from 'react';
 import Container from './components/Container';
 import DatePicker from './components/DatePicker';
@@ -9,7 +10,7 @@ class App extends React.Component {
         super(props);
         this.state = {
             dayCount: 0,
-            blurb: null,
+            blurb: 'That\'s today!',
             opacifyResults: false,
         }
         this.calculateDays = this.calculateDays.bind(this);
@@ -17,10 +18,7 @@ class App extends React.Component {
 
     calculateDays = (year, month, day, text) => {
         const today = new Date();
-        // console.log(today);
-
         const inputDate = new Date(year, month - 1, day);
-        // console.log(inputDate);
 
         // number of milliseconds in one day
         const ONE_DAY = 1000 * 60 * 60 * 24;
@@ -32,7 +30,7 @@ class App extends React.Component {
         const difference_ms = Math.abs(today_ms - inputDate_ms);
 
         // convert back to days
-        const dayCount = Math.round(difference_ms/ONE_DAY);
+        const dayCount = Math.round(difference_ms/ONE_DAY) - 1;
 
         this.setState({dayCount: dayCount, blurb: text});
     }
@@ -45,7 +43,7 @@ class App extends React.Component {
 
     render(){
         return (
-            <div className="App">
+            <div className="App flex-column-center">
                 <Container />
                 <DatePicker calculateDays={this.calculateDays} setResultsOpacity={this.setResultsOpacity}/>
                 <Results count={this.state.dayCount} blurb={this.state.blurb} opacify={this.state.opacifyResults}/>
