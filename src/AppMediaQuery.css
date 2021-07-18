@@ -14,8 +14,16 @@
         width: 80px;
     }
 
+    .submitContainer button {
+        font-size: 14px;
+    }
+
     .title {
         font-size: 32px;
+    }
+
+    .orText {
+        font-size: 18px;
     }
 
     .inputGroup div,
@@ -30,8 +38,31 @@
         min-width: 90px;
     }
 
+    .buttonOptions {
+        width: 90px;
+    }
+
+    .monthList {
+        top: 39px;
+        left: 10px;
+    }
+
+    .buttonOptions {
+        font-size: 13px;
+    }
+
     .dayGroup {
         min-width: 45px;
+    }
+
+    .daysList {
+        left: -32px;
+    }
+
+    .daysList button {
+        font-size: 13px;
+        width: 24px;
+        height: 24px;
     }
 
     .resultsContainer {
@@ -61,7 +92,15 @@
 }
 
 @media(max-width: 425px) {
+    .flex-column-center {
+        padding: 50px 10px 0 10px;
+    }
+
     .title {
         font-size: 25px;
+    }
+
+    h1 {
+        margin: 10px;
     }
 }

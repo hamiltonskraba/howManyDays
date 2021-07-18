@@ -43,7 +43,7 @@ class Results extends React.Component {
         return(
             <div className="results">
                 <div className="resultsContainer flex-center">
-                    <div className="displayCount flex-center" style={{opacity: this.props.opacify ? '70%' : '100%'}}>
+                    <div className="displayCount flex-center" style={{opacity: this.props.opacify ? '.7' : '1'}}>
                         {this.calculateUnit(this.props.count).toLocaleString()}
                         <div className="blurb">{this.props.blurb}</div>
                     </div>

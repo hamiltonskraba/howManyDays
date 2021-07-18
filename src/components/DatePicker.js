@@ -80,7 +80,6 @@ class DatePicker extends React.Component {
 
     dayInHistory(){
         const random = Math.floor(Math.random() * historyMap.length);
-        // console.log(random);
 
         const [month, date, year] = historyMap[random].value.split("/");
         const blurb = historyMap[random].label;
@@ -93,7 +92,6 @@ class DatePicker extends React.Component {
     }
 
     handleReturnKey(e){
-        // console.log(e.key);
         if(e.key === 'Enter'){
             this.calculate();
         }
@@ -152,7 +150,6 @@ class DatePicker extends React.Component {
                     <p className="orText">Or</p>
                     <button className="randomDateButton hoverPointer" onClick={this.dayInHistory}>Choose A Random Date</button>
                 </div>
-
             </div>
         );
     }
