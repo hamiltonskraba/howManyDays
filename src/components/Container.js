@@ -10,7 +10,7 @@ class Container extends React.Component {
         return(
             <div className="container">
                 <div className="moon hoverPointer" />
-                <h1 className="flex-center title">How Long Has It Been?</h1>
+                <h1 className="flex-center title">How Long Since Then?</h1>
                 <Particles id="particles-js"
                            params={{
                                "particles": {
